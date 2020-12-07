@@ -17,7 +17,7 @@ public class RegistrationSteps extends BaseTest {
 
     @Before(value = {"@TC02"})
     public void setUp(Scenario scenario) {
-        init(scenario, 3);
+        init(scenario, 10);
         registrationPage = new RegistrationPage(action);
     }
 
@@ -41,4 +41,5 @@ public class RegistrationSteps extends BaseTest {
     public void i_see_alert_message_displayed() {
         Assert.assertTrue(registrationPage.isAlertDisplayed());
     }
+
 }

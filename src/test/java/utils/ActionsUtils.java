@@ -7,9 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Timestamp;
+import java.util.function.Function;
 
 public class ActionsUtils {
 
@@ -31,12 +34,13 @@ public class ActionsUtils {
         webDriver.get(url);
     }
 
-    public void sendKeys(WebElement element, String text) {
-        element.sendKeys(text);
+    public void sendKeys(WebElement webElement, String text) {
+        waitForElementToBeVisible(webElement);
+        webElement.sendKeys(text);
     }
 
     public boolean isElementDisplayed(WebElement webElement) {
-        waitSec(3);
+        waitForElementToBeVisible(webElement);
         try {
             if (webElement.isDisplayed()) {
                 return true;
@@ -46,11 +50,16 @@ public class ActionsUtils {
         return false;
     }
 
-    public void waitSec(int sec) {
-        try {
-            Thread.sleep(sec * 1000);
-        } catch (InterruptedException ignored) {
-        }
+    public void waitForElementToBeClickable(WebElement webElement) {
+        waitForElementToBe(webElement, ExpectedConditions::visibilityOf, "clickable");
+    }
+
+    public void waitForElementToBeVisible(WebElement webElement) {
+        waitForElementToBe(webElement, ExpectedConditions::visibilityOf, "visible");
+    }
+
+    private void waitForElementToBe(WebElement webElement, Function<WebElement, ExpectedCondition<WebElement>> expectedCondition, String action) {
+        waitDriver.until(expectedCondition.apply(webElement));
     }
 
     public void scenarioFailed() {

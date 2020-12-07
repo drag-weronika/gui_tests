@@ -17,7 +17,7 @@ public class LoginSteps extends BaseTest {
 
     @Before(value = {"@TC002"})
     public void setUp(Scenario scenario) {
-        init(scenario, 3);
+        init(scenario, 10);
         loginPage = new LoginPage(action);
     }
 
