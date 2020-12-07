@@ -36,6 +36,7 @@ public class ActionsUtils {
     }
 
     public boolean isElementDisplayed(WebElement webElement) {
+        waitSec(3);
         try {
             if (webElement.isDisplayed()) {
                 return true;
@@ -43,6 +44,13 @@ public class ActionsUtils {
         } catch (NoSuchElementException ignored) {
         }
         return false;
+    }
+
+    public void waitSec(int sec) {
+        try {
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException ignored) {
+        }
     }
 
     public void scenarioFailed() {

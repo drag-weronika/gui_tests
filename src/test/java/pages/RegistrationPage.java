@@ -9,10 +9,6 @@ public class RegistrationPage extends BasePage {
 
     @FindBy(id = "id_email")
     WebElement emailInput;
-    @FindBy(xpath = "//*[@class='alert alert-danger'")
-    WebElement alert;
-    @FindBy(id = "onetrust-accept-btn-handler")
-    WebElement rejectAddsButton;
 
     public RegistrationPage(ActionsUtils actions) {
         super(actions);
@@ -20,14 +16,6 @@ public class RegistrationPage extends BasePage {
 
     public void setEmail(String email) {
         actions.sendKeys(emailInput, email);
-    }
-
-    public boolean isAlertDisplayed() {
-        return actions.isElementDisplayed(alert);
-    }
-
-    public void rejectAdds(){
-       rejectAddsButton.click();
     }
 
 }

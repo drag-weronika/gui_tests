@@ -1,7 +1,8 @@
+@test
 @registration
 Feature: Registration
 
-  @invalidEmail
+  @TC02
   Scenario: Fill invalid registration data
     Given I navigate to last.fm registration page
     When I enter email with invalid format

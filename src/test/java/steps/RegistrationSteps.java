@@ -2,7 +2,6 @@ package steps;
 
 import base.BaseTest;
 import config.Config;
-import cucumber.api.PendingException;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -16,14 +15,14 @@ public class RegistrationSteps extends BaseTest {
 
     RegistrationPage registrationPage;
 
-    @Before(value={"@invalidEmail"})
-    public void setUp(Scenario scenario){
+    @Before(value = {"@TC02"})
+    public void setUp(Scenario scenario) {
         init(scenario, 3);
-        registrationPage=new RegistrationPage(action);
+        registrationPage = new RegistrationPage(action);
     }
 
-    @After(value={"@invalidEmail"})
-    public void tearDown(Scenario scenario){
+    @After(value = {"@TC02"})
+    public void tearDown(Scenario scenario) {
         terminate(scenario);
     }
 

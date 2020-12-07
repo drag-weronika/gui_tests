@@ -1,12 +1,130 @@
 [
   {
-    "line": 2,
+    "line": 3,
     "elements": [
       {
         "before": [
           {
             "result": {
-              "duration": 8738598600,
+              "duration": 5412762300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginSteps.setUp(Scenario)"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Login with invalid password",
+        "description": "",
+        "id": "login;login-with-invalid-password",
+        "after": [
+          {
+            "result": {
+              "duration": 120900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginSteps.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7462590700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I navigate to last.fm login page",
+            "match": {
+              "location": "LoginSteps.i_navigate_to_last_fm_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 536433900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I set email",
+            "match": {
+              "location": "LoginSteps.i_set_email()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 545249600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I set invalid password",
+            "match": {
+              "location": "LoginSteps.i_set_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2083887300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I click submit button",
+            "match": {
+              "location": "LoginSteps.i_click_submit_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3065344200,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I should see alert displayed",
+            "match": {
+              "location": "LoginSteps.i_should_see_alert_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@TC002"
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "login.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@test"
+      },
+      {
+        "line": 2,
+        "name": "@login"
+      }
+    ]
+  },
+  {
+    "line": 3,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1313300,
               "status": "passed"
             },
             "match": {
@@ -14,14 +132,14 @@
             }
           }
         ],
-        "line": 5,
+        "line": 6,
         "name": "Fill invalid registration data",
         "description": "",
         "id": "registration;fill-invalid-registration-data",
         "after": [
           {
             "result": {
-              "duration": 19825700,
+              "duration": 51900,
               "status": "passed"
             },
             "match": {
@@ -34,10 +152,10 @@
         "steps": [
           {
             "result": {
-              "duration": 24531038200,
+              "duration": 5546411100,
               "status": "passed"
             },
-            "line": 6,
+            "line": 7,
             "name": "I navigate to last.fm registration page",
             "match": {
               "location": "RegistrationSteps.i_navigate_to_last_fm_registration_page()"
@@ -46,10 +164,10 @@
           },
           {
             "result": {
-              "duration": 157115500,
+              "duration": 142351400,
               "status": "passed"
             },
-            "line": 7,
+            "line": 8,
             "name": "I enter email with invalid format",
             "match": {
               "location": "RegistrationSteps.i_enter_email_with_invalid_format()"
@@ -58,14 +176,10 @@
           },
           {
             "result": {
-              "duration": 79828000,
-              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertTrue(Assert.java:52)\r\n\tat steps.RegistrationSteps.i_see_alert_message_displayed(RegistrationSteps.java:43)\r\n\tat ✽.Then I see alert message displayed(registration.feature:8)\r\n",
-              "status": "failed"
+              "duration": 3031951700,
+              "status": "passed"
             },
-            "output": [
-              "JS console logs \u003c\n2020-12-06T17:33:38.640 entry.getLevel() entry.getMessage()/2020-12-06T17:33:38.890 entry.getLevel() entry.getMessage()/2020-12-06T17:33:39.137 entry.getLevel() entry.getMessage()/ \u003e\n"
-            ],
-            "line": 8,
+            "line": 9,
             "name": "I see alert message displayed",
             "match": {
               "location": "RegistrationSteps.i_see_alert_message_displayed()"
@@ -75,8 +189,8 @@
         ],
         "tags": [
           {
-            "line": 4,
-            "name": "@invalidEmail"
+            "line": 5,
+            "name": "@TC02"
           }
         ]
       }
@@ -89,6 +203,10 @@
     "tags": [
       {
         "line": 1,
+        "name": "@test"
+      },
+      {
+        "line": 2,
         "name": "@registration"
       }
     ]
