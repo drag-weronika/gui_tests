@@ -1,9 +1,7 @@
 package utils;
 
 import cucumber.api.Scenario;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
@@ -34,9 +32,24 @@ public class ActionsUtils {
         webDriver.get(url);
     }
 
+    public WebElement findByXpath(String xpath) {
+        return webDriver.findElement(By.xpath(xpath));
+    }
+
+    public void clickWebElement(WebElement webElement) {
+        waitForElementToBeVisible(webElement);
+        waitForElementToBeClickable(webElement);
+        webElement.click();
+    }
+
     public void sendKeys(WebElement webElement, String text) {
         waitForElementToBeVisible(webElement);
+        webElement.click();
         webElement.sendKeys(text);
+    }
+
+    public boolean isDisplayed(String xpath) {
+        return isElementDisplayed(findByXpath(xpath));
     }
 
     public boolean isElementDisplayed(WebElement webElement) {
@@ -60,6 +73,13 @@ public class ActionsUtils {
 
     private void waitForElementToBe(WebElement webElement, Function<WebElement, ExpectedCondition<WebElement>> expectedCondition, String action) {
         waitDriver.until(expectedCondition.apply(webElement));
+    }
+
+    public void waitSec(int numberOfSeconds) {
+        try {
+            Thread.sleep(numberOfSeconds * 1000);
+        } catch (Exception ignored) {
+        }
     }
 
     public void scenarioFailed() {

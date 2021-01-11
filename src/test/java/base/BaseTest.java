@@ -17,7 +17,7 @@ public class BaseTest {
 
     protected void init(Scenario scenario, int timeoutInSeconds) {
         logger = LoggerFactory.getLogger(this.getClass());
-        logger.info("Setup scnario: " + scenario.getName());
+        logger.info("Setup scenario: " + scenario.getName());
         driver = StaticDriver.getInstanceWebDriver();
         wait = new WebDriverWait(driver, timeoutInSeconds);
         action = new ActionsUtils(scenario, driver, wait);
@@ -28,6 +28,6 @@ public class BaseTest {
             action.scenarioFailed();
         }
         logger.info("Tear down scenario: " + scenario.getName());
-
     }
+
 }

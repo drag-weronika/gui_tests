@@ -7,10 +7,12 @@ import utils.ActionsUtils;
 
 public class BasePage {
 
-    @FindBy(id = "onetrust-accept-btn-handler")
-    WebElement rejectAddsButton;
-    @FindBy(xpath = "//*[@class='alert alert-danger']")
-    WebElement alert;
+    @FindBy(xpath = "//h1[@class='logo-font' and contains(text(),'BBlog')]")
+    WebElement homeHeader;
+    @FindBy(xpath = "//a[@class='nav-link' and @href=\"#/editor\"]")
+    WebElement newPostLink;
+    @FindBy(xpath = "//a[@class='nav-link' and contains(text(),'Global Feed')]")
+    WebElement globalFeedTab;
 
     protected ActionsUtils actions;
 
@@ -19,14 +21,17 @@ public class BasePage {
         this.actions = actions;
     }
 
-    public void rejectAdds() {
-        if (actions.isElementDisplayed(rejectAddsButton)) {
-            rejectAddsButton.click();
-        }
+    public boolean isRedirectedToHomePage() {
+        actions.waitForElementToBeVisible(homeHeader);
+        return actions.isElementDisplayed(homeHeader);
     }
 
-    public boolean isAlertDisplayed() {
-        return actions.isElementDisplayed(alert);
+    public void clickFeedTab() {
+        actions.clickWebElement(globalFeedTab);
+    }
+
+    public void navigateToEditor() {
+        actions.clickWebElement(newPostLink);
     }
 
 }

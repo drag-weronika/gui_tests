@@ -15,31 +15,30 @@ public class LoginSteps extends BaseTest {
 
     LoginPage loginPage;
 
-    @Before(value = {"@TC002"})
+    @Before(value = {"@login"})
     public void setUp(Scenario scenario) {
         init(scenario, 10);
         loginPage = new LoginPage(action);
     }
 
-    @After(value = {"@TC002"})
+    @After(value = {"@login"})
     public void tearDown(Scenario scenario) {
         terminate(scenario);
     }
 
-    @Given("^I navigate to last\\.fm login page$")
-    public void i_navigate_to_last_fm_login_page() {
+    @Given("^I navigate to login page$")
+    public void i_navigate_to_login_page() {
         action.openWebSiteByUrl(Config.loginUrl);
-        loginPage.rejectAdds();
     }
 
     @When("^I set email$")
     public void i_set_email() {
-        loginPage.setEmail("ank7@op.pl");
+        loginPage.setEmail("weronika@gmail.com");
     }
 
-    @Then("^I set invalid password$")
+    @Then("^I set password$")
     public void i_set_password() {
-        loginPage.setPassword("qwertyuiop1#");
+        loginPage.setPassword("Qwerty#1995");
     }
 
     @Then("^I click submit button$")
@@ -47,8 +46,8 @@ public class LoginSteps extends BaseTest {
         loginPage.submitLoginForm();
     }
 
-    @Then("^I should see alert displayed$")
-    public void i_should_see_alert_displayed() {
-        Assert.assertTrue(loginPage.isAlertDisplayed());
+    @Then("^I should see main page displayed$")
+    public void i_should_main_page_displayed() {
+        Assert.assertTrue(loginPage.isRedirectedToHomePage());
     }
 }

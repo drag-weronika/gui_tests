@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"html:reports/cucumber-html-report",
                 "json:reports/cucumber.json",
                 "pretty"},
-        tags = {"~@Ignore", "@test"},
+        tags = {"~@Ignore", "@login, @createPost"},
         features = {"src/test/resources"},
         glue = {"steps"}
 )

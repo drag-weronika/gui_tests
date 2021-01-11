@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 5412762300,
+              "duration": 5561850600,
               "status": "passed"
             },
             "match": {
@@ -14,14 +14,14 @@
             }
           }
         ],
-        "line": 6,
+        "line": 5,
         "name": "Login with invalid password",
         "description": "",
         "id": "login;login-with-invalid-password",
         "after": [
           {
             "result": {
-              "duration": 120900,
+              "duration": 119300,
               "status": "passed"
             },
             "match": {
@@ -34,22 +34,22 @@
         "steps": [
           {
             "result": {
-              "duration": 7462590700,
+              "duration": 1295740000,
               "status": "passed"
             },
-            "line": 7,
-            "name": "I navigate to last.fm login page",
+            "line": 6,
+            "name": "I navigate to login page",
             "match": {
-              "location": "LoginSteps.i_navigate_to_last_fm_login_page()"
+              "location": "LoginSteps.i_navigate_to_login_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 536433900,
+              "duration": 263020800,
               "status": "passed"
             },
-            "line": 8,
+            "line": 7,
             "name": "I set email",
             "match": {
               "location": "LoginSteps.i_set_email()"
@@ -58,11 +58,11 @@
           },
           {
             "result": {
-              "duration": 545249600,
+              "duration": 226829200,
               "status": "passed"
             },
-            "line": 9,
-            "name": "I set invalid password",
+            "line": 8,
+            "name": "I set password",
             "match": {
               "location": "LoginSteps.i_set_password()"
             },
@@ -70,10 +70,10 @@
           },
           {
             "result": {
-              "duration": 2083887300,
+              "duration": 1138896000,
               "status": "passed"
             },
-            "line": 10,
+            "line": 9,
             "name": "I click submit button",
             "match": {
               "location": "LoginSteps.i_click_submit_button()"
@@ -82,21 +82,15 @@
           },
           {
             "result": {
-              "duration": 3065344200,
+              "duration": 701279000,
               "status": "passed"
             },
-            "line": 11,
-            "name": "I should see alert displayed",
+            "line": 10,
+            "name": "I should see main page displayed",
             "match": {
-              "location": "LoginSteps.i_should_see_alert_displayed()"
+              "location": "LoginSteps.i_should_main_page_displayed()"
             },
             "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 5,
-            "name": "@TC002"
           }
         ]
       }
@@ -118,32 +112,32 @@
     ]
   },
   {
-    "line": 3,
+    "line": 2,
     "elements": [
       {
         "before": [
           {
             "result": {
-              "duration": 1313300,
+              "duration": 2940100,
               "status": "passed"
             },
             "match": {
-              "location": "RegistrationSteps.setUp(Scenario)"
+              "location": "PostCreationSteps.setUp(Scenario)"
             }
           }
         ],
-        "line": 6,
-        "name": "Fill invalid registration data",
+        "line": 4,
+        "name": "Post creation",
         "description": "",
-        "id": "registration;fill-invalid-registration-data",
+        "id": "post-creation;post-creation",
         "after": [
           {
             "result": {
-              "duration": 51900,
+              "duration": 60400,
               "status": "passed"
             },
             "match": {
-              "location": "RegistrationSteps.tearDown(Scenario)"
+              "location": "PostCreationSteps.tearDown(Scenario)"
             }
           }
         ],
@@ -152,62 +146,148 @@
         "steps": [
           {
             "result": {
-              "duration": 5546411100,
+              "duration": 678114700,
               "status": "passed"
             },
-            "line": 7,
-            "name": "I navigate to last.fm registration page",
+            "line": 5,
+            "name": "I navigate to home page",
             "match": {
-              "location": "RegistrationSteps.i_navigate_to_last_fm_registration_page()"
+              "location": "PostCreationSteps.i_navigate_to_home_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 142351400,
+              "duration": 852066800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I navigate to Editor by link",
+            "match": {
+              "location": "PostCreationSteps.i_navigate_to_Editor_by_link()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 746994800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I set title",
+            "match": {
+              "location": "PostCreationSteps.i_set_title()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 210665600,
               "status": "passed"
             },
             "line": 8,
-            "name": "I enter email with invalid format",
+            "name": "I set description",
             "match": {
-              "location": "RegistrationSteps.i_enter_email_with_invalid_format()"
+              "location": "PostCreationSteps.i_set_description()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 212605000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I set content",
+            "match": {
+              "location": "PostCreationSteps.i_set_content()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 196170100,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I set tag",
+            "match": {
+              "location": "PostCreationSteps.i_set_tag()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1151776300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I submit posting",
+            "match": {
+              "location": "PostCreationSteps.i_submit_posting()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 3031951700,
+              "duration": 1334206300,
               "status": "passed"
             },
-            "line": 9,
-            "name": "I see alert message displayed",
+            "line": 12,
+            "name": "I should see post created with icons for edition, deletion and commenting",
             "match": {
-              "location": "RegistrationSteps.i_see_alert_message_displayed()"
+              "location": "PostCreationSteps.i_should_see_post_created_with_icons_for_edition_deletion_and_commenting()"
             },
             "keyword": "Then "
-          }
-        ],
-        "tags": [
+          },
           {
-            "line": 5,
-            "name": "@TC02"
+            "result": {
+              "duration": 482975900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I navigate to home page",
+            "match": {
+              "location": "PostCreationSteps.i_navigate_to_home_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 755712800,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I click Global Feed tab",
+            "match": {
+              "location": "PostCreationSteps.i_click_Global_Feed_tab()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1047665700,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I should see the post listed",
+            "match": {
+              "location": "PostCreationSteps.i_should_see_the_post_listed()"
+            },
+            "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "Registration",
+    "name": "Post creation",
     "description": "",
-    "id": "registration",
+    "id": "post-creation",
     "keyword": "Feature",
-    "uri": "registration.feature",
+    "uri": "postCreation.feature",
     "tags": [
       {
         "line": 1,
-        "name": "@test"
-      },
-      {
-        "line": 2,
-        "name": "@registration"
+        "name": "@createPost"
       }
     ]
   }

@@ -2,8 +2,7 @@ package config;
 
 public class Config {
 
-    public static String baseUrl = "https://www.last.fm";
+    public static String baseUrl = "https://candidatex:qa-is-cool@qa-task.backbasecloud.com";
 
-    public static String registrationUrl = baseUrl + "/join";
-    public static String loginUrl = baseUrl + "/login";
+    public static String loginUrl = baseUrl + "/#/login";
 }
