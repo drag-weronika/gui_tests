@@ -90,7 +90,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>CucumberWebGui</projectName>
+                            <projectName>gui_selenium_tests</projectName>
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
                             <skippedFails>true</skippedFails>
