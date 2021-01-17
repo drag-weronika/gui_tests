@@ -33,7 +33,7 @@ public class LoginSteps extends BaseTest {
 
     @When("^I set email$")
     public void i_set_email() {
-        loginPage.setEmail("weronika@gmail.com");
+        loginPage.setEmail("candidatex@gmail.com");
     }
 
     @Then("^I set password$")

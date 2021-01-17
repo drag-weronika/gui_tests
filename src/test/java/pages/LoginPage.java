@@ -7,11 +7,11 @@ import utils.ActionsUtils;
 
 public class LoginPage extends BasePage {
 
-    @FindBy(xpath = "//input[@placeholder='Username']")
+    @FindBy(xpath = "")
     WebElement emailInput;
-    @FindBy(xpath = "//input[@placeholder='Password']")
+    @FindBy(xpath = "")
     WebElement passwordInput;
-    @FindBy(xpath = "//*[@type='submit']")
+    @FindBy(xpath = "")
     WebElement submitBtn;
 
     public LoginPage(ActionsUtils actions) {

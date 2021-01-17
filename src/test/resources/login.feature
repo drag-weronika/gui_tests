@@ -1,4 +1,4 @@
-@test
+@tests
 @login
 Feature: Login
 
@@ -8,4 +8,3 @@ Feature: Login
     Then I set password
     Then I click submit button
     Then I should see main page displayed
-
