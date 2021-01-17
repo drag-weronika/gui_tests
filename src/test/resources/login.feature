@@ -1,4 +1,3 @@
-@tests
 @login
 Feature: Login
 

@@ -9,16 +9,19 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import pages.HomePage;
 import pages.LoginPage;
 
 public class LoginSteps extends BaseTest {
 
     LoginPage loginPage;
+    HomePage homePage;
 
     @Before(value = {"@login"})
     public void setUp(Scenario scenario) {
         init(scenario, 10);
         loginPage = new LoginPage(action);
+        homePage = new HomePage(action);
     }
 
     @After(value = {"@login"})
@@ -48,6 +51,7 @@ public class LoginSteps extends BaseTest {
 
     @Then("^I should see main page displayed$")
     public void i_should_main_page_displayed() {
-        Assert.assertTrue(loginPage.isRedirectedToHomePage());
+        Assert.assertTrue(homePage.isHomePageVisible());
     }
+
 }

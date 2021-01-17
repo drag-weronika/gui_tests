@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.function.Function;
 
 public class ActionsUtils {
@@ -36,7 +37,18 @@ public class ActionsUtils {
         return webDriver.findElement(By.xpath(xpath));
     }
 
+    public List<WebElement> findAllByXpath(String xpath){
+        return webDriver.findElements(By.xpath(xpath));
+    }
+
     public void clickWebElement(WebElement webElement) {
+        waitForElementToBeVisible(webElement);
+        waitForElementToBeClickable(webElement);
+        webElement.click();
+    }
+
+    public void clickByXpath(String xpath){
+        WebElement webElement = findByXpath(xpath);
         waitForElementToBeVisible(webElement);
         waitForElementToBeClickable(webElement);
         webElement.click();
